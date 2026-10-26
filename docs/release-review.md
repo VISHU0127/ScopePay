@@ -1,5 +1,11 @@
 # Local release review — 26 October 2026
 
+## Live verification follow-up — 27 October
+
+Supabase accepted creation of a dedicated test Auth user (no email sent), and direct password sign-in succeeded. Application sign-in returned 503 because bounded GET queries for `freelancers`, `projects`, `agreements`, `scope_analyses` and `payment_attempts` returned HTTP 404 / PGRST205. Earlier HEAD responses did not establish schema availability and must not be treated as migration verification. Apply the repository migrations to the intended project before continuing. No test project, proposal or payment was created in this attempt.
+
+Gemini `gemini-3.5-flash` returned a real generation response on 26 October; the configured older model returned 404. `GEMINI_MODEL` now selects the model. Full structured extraction remains unverified. PayPal sandbox authentication and the webhook registration lookup succeeded, with the registered URL matching the temporary tunnel. Capture, merchant matching on an actual order, and delivered webhook verification remain pending.
+
 Publication is pending the owner's review. No deployment or repository publication was performed.
 
 ## Changes in this review
